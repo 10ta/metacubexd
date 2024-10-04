@@ -114,20 +114,20 @@ export enum LANG {
 export enum CONNECTIONS_TABLE_ACCESSOR_KEY {
   Details = 'details',
   Close = 'close',
+  SourceIP = 'sourceIP',
+  SourcePort = 'sourcePort',
   ID = 'ID',
-  Type = 'type',
-  Process = 'process',
   Host = 'host',
   SniffHost = 'sniffHost',
-  Rule = 'rules',
   Chains = 'chains',
+  Rule = 'rules',
   DlSpeed = 'dlSpeed',
   ULSpeed = 'ulSpeed',
   Download = 'dl',
   Upload = 'ul',
   ConnectTime = 'connectTime',
-  SourceIP = 'sourceIP',
-  SourcePort = 'sourcePort',
+  Type = 'type',
+  Process = 'process',
   Destination = 'destination',
   InboundUser = 'inboundUser',
 }
@@ -142,6 +142,9 @@ export const CONNECTIONS_TABLE_INITIAL_COLUMN_VISIBILITY = {
     CONNECTIONS_TABLE_INITIAL_COLUMN_ORDER.map((i) => [i, true]),
   ),
   [CONNECTIONS_TABLE_ACCESSOR_KEY.ID]: false,
+  [CONNECTIONS_TABLE_ACCESSOR_KEY.SniffHost]: false,
+  [CONNECTIONS_TABLE_ACCESSOR_KEY.Destination]: false,
+  [CONNECTIONS_TABLE_ACCESSOR_KEY.InboundUser]: false,
 }
 
 export enum TAILWINDCSS_SIZE {

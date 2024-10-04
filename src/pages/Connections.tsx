@@ -162,10 +162,9 @@ export default () => {
       header: () => t('host'),
       accessorKey: CONNECTIONS_TABLE_ACCESSOR_KEY.Host,
       accessorFn: (original) =>
-        `${
-          original.metadata.host
-            ? original.metadata.host
-            : original.metadata.destinationIP
+        `${original.metadata.host
+          ? original.metadata.host
+          : original.metadata.destinationIP
         }:${original.metadata.destinationPort}`,
     },
     {
@@ -476,7 +475,7 @@ export default () => {
                           <div
                             class={twMerge(
                               header.column.getCanSort() &&
-                                'cursor-pointer select-none',
+                              'cursor-pointer select-none',
                               'flex-1',
                             )}
                             onClick={header.column.getToggleSortingHandler()}
@@ -513,7 +512,7 @@ export default () => {
                             e.preventDefault()
 
                             const value = cell.renderValue() as null | string
-                            value && writeClipboard(value).catch(() => {})
+                            value && writeClipboard(value).catch(() => { })
                           }}
                         >
                           {cell.getIsGrouped() ? (
@@ -546,7 +545,7 @@ export default () => {
                           ) : cell.getIsAggregated() ? (
                             flexRender(
                               cell.column.columnDef.aggregatedCell ??
-                                cell.column.columnDef.cell,
+                              cell.column.columnDef.cell,
                               cell.getContext(),
                             )
                           ) : cell.getIsPlaceholder() ? null : (

@@ -17,7 +17,7 @@ import {
 } from '~/types'
 
 export const [proxiesPreviewType, setProxiesPreviewType] = makePersisted(
-  createSignal(PROXIES_PREVIEW_TYPE.Auto),
+  createSignal(PROXIES_PREVIEW_TYPE.DOTS),
   { name: 'proxiesPreviewType', storage: localStorage },
 )
 export const [proxiesOrderingType, setProxiesOrderingType] = makePersisted(
@@ -32,13 +32,13 @@ export const [hideUnAvailableProxies, setHideUnAvailableProxies] =
   })
 
 export const [renderProxiesInTwoColumns, setRenderProxiesInTwoColumns] =
-  makePersisted(createSignal(true), {
+  makePersisted(createSignal(false), {
     name: 'renderProxiesInTwoColumns',
     storage: localStorage,
   })
 
 export const [urlForLatencyTest, setUrlForLatencyTest] = makePersisted(
-  createSignal('https://www.gstatic.com/generate_204'),
+  createSignal('https://cp.cloudflare.com'),
   { name: 'urlForLatencyTest', storage: localStorage },
 )
 
@@ -48,7 +48,7 @@ export const [urlForIPv6SupportTest, setUrlIPv6SupportTest] = makePersisted(
 )
 
 export const [autoCloseConns, setAutoCloseConns] = makePersisted(
-  createSignal(false),
+  createSignal(true),
   { name: 'autoCloseConns', storage: localStorage },
 )
 export const [useTwemoji, setUseTwemoji] = makePersisted(createSignal(true), {

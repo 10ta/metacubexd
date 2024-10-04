@@ -35,8 +35,8 @@ export default () => {
       .get(url, {
         headers: secret
           ? {
-              Authorization: `Bearer ${secret}`,
-            }
+            Authorization: `Bearer ${secret}`,
+          }
           : {},
       })
       .then(({ ok }) => ok)
@@ -122,9 +122,8 @@ export default () => {
 
     if (query.has('hostname')) {
       void onSubmit({
-        url: `${query.get('http') ? 'http:' : query.get('https') ? 'https:' : window.location.protocol}//${query.get('hostname')}${
-          query.get('port') ? `:${query.get('port')}` : ''
-        }`,
+        url: `${query.get('http') ? 'http:' : query.get('https') ? 'https:' : window.location.protocol}//${query.get('hostname')}${query.get('port') ? `:${query.get('port')}` : ''
+          }`,
         secret: query.get('secret') ?? '',
       })
     } else if (endpointList().length === 0) {
@@ -133,7 +132,7 @@ export default () => {
         or user who is using default config won't be able to switch to another endpoint ever
       */
       void onSubmit({
-        url: 'http://127.0.0.1:9090',
+        url: 'http://10.17.0.5:9011',
         secret: '',
       })
     }
@@ -157,8 +156,8 @@ export default () => {
             />
 
             <datalist id="defaultEndpoints">
-              <option value="http://127.0.0.1:9090" />
-              <Show when={window.location.origin !== 'http://127.0.0.1:9090'}>
+              <option value="http://10.17.0.5:9011" />
+              <Show when={window.location.origin !== 'http://10.17.0.5:9011'}>
                 <option value={window.location.origin} />
               </Show>
             </datalist>
