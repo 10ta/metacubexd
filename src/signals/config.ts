@@ -16,7 +16,7 @@ import {
   ConnectionsTableColumnVisibility,
 } from '~/types'
 
-export const proxiesPreviewTypeDefault = PROXIES_PREVIEW_TYPE.Auto
+export const proxiesPreviewTypeDefault = PROXIES_PREVIEW_TYPE.DOTS
 
 export const [proxiesPreviewType, setProxiesPreviewType] = makePersisted(
   createSignal(proxiesPreviewTypeDefault),
@@ -30,7 +30,7 @@ export const [proxiesOrderingType, setProxiesOrderingType] = makePersisted(
   { name: 'proxiesOrderingType', storage: localStorage },
 )
 
-export const renderProxiesInTwoColumnsDefault = true
+export const renderProxiesInTwoColumnsDefault = false
 
 export const [renderProxiesInTwoColumns, setRenderProxiesInTwoColumns] =
   makePersisted(createSignal(renderProxiesInTwoColumnsDefault), {
@@ -46,7 +46,7 @@ export const [hideUnAvailableProxies, setHideUnAvailableProxies] =
     storage: localStorage,
   })
 
-export const urlForLatencyTestDefault = 'https://www.gstatic.com/generate_204'
+export const urlForLatencyTestDefault = 'http://cp.cloudflare.com/'
 
 export const [urlForLatencyTest, setUrlForLatencyTest] = makePersisted(
   createSignal(urlForLatencyTestDefault),
@@ -60,7 +60,7 @@ export const [autoCloseConns, setAutoCloseConns] = makePersisted(
   { name: 'autoCloseConns', storage: localStorage },
 )
 
-export const useTwemojiDefault = false
+export const useTwemojiDefault = true
 
 export const [useTwemoji, setUseTwemoji] = makePersisted(
   createSignal(useTwemojiDefault),
@@ -77,14 +77,14 @@ export const [autoSwitchTheme, setAutoSwitchTheme] = makePersisted(
   { name: 'autoSwitchTheme', storage: localStorage },
 )
 
-export const favDayThemeDefault: (typeof themes)[number] = 'nord'
+export const favDayThemeDefault: (typeof themes)[number] = 'emerald'
 
 export const [favDayTheme, setFavDayTheme] = makePersisted(
   createSignal<(typeof themes)[number]>(favDayThemeDefault),
   { name: 'favDayTheme', storage: localStorage },
 )
 
-export const favNightThemeDefault: (typeof themes)[number] = 'sunset'
+export const favNightThemeDefault: (typeof themes)[number] = 'forest'
 
 export const [favNightTheme, setFavNightTheme] = makePersisted(
   createSignal<(typeof themes)[number]>(favNightThemeDefault),
