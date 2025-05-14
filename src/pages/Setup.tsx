@@ -136,9 +136,9 @@ export default () => {
               />
 
               <datalist id="defaultEndpoints">
-                <option value="http://127.0.0.1:9011" />
+                <option value="http://127.0.0.1:9090" />
 
-                <Show when={window.location.origin !== 'http://127.0.0.1:9011'}>
+                <Show when={window.location.origin !== 'http://127.0.0.1:9090'}>
                   <option value={window.location.origin} />
                 </Show>
               </datalist>
